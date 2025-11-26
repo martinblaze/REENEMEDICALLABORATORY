@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#0A4D8C"/>
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#28A745" stroke-width="3"/>
+  
+  <!-- Medical Cross -->
+  <path d="M100 50 L100 150 M50 100 L150 100" stroke="white" stroke-width="20" stroke-linecap="round"/>
+  
+  <!-- Heartbeat Line -->
+  <path d="M40 100 L60 100 L70 80 L80 120 L90 100 L160 100" 
+        fill="none" stroke="#FF6B35" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Letter R -->
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="60" 
+        font-weight="bold" fill="white" text-anchor="middle">R</text>
+  
+  <!-- Bottom Text -->
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="14" 
+        font-weight="600" fill="white" text-anchor="middle">REENE MEDICAL</text>
+</svg>
