@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REENE Medical Diagnostic Center | Ultrasound, X-ray, CT Scan in Onitsha, Anambra</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="description" content="Professional medical diagnostic services in Awada, Onitsha. Ultrasound, X-ray, CT Scan, MRI, laboratory tests, ECG. Trusted diagnostic center in Anambra State, Nigeria.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2C3E50;
+        }
+        
+        header {
+            background: #0A4D8C;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .top-bar {
+            background: #083D6F;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #FF6B35;
+        }
+        
+        .cta-button {
+            background: #FF6B35;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(10, 77, 140, 0.85), rgba(10, 77, 140, 0.85)), url('images/facility.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #28A745;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #0A4D8C;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .feature-banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #0A4D8C;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: #0A4D8C;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: #0A4D8C;
+            margin-bottom: 15px;
+        }
+        
+        .why-choose {
+            background: #F0F7FF;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #28A745;
+        }
+        
+        .feature-box h3 {
+            color: #0A4D8C;
+            margin-bottom: 10px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #0A4D8C, #083D6F);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #FF6B35;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1rem;
+            }
+            
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: #0A4D8C;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 80px 0 30px;
+                height: 100vh;
+                overflow-y: auto;
+                gap: 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                padding: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .cta-button {
+                margin-top: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .top-bar .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 0.85rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div>📧 reenelab@gmail.com</div>
+            <div class="contact-info">
+                <a href="tel:08122190051">📞 08122190051</a>
+                <a href="tel:08035985878">📞 08035985878</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.svg" alt="REENE Medical Logo">
+                <h1>REENE MEDICAL DIAGNOSTIC CENTER</h1>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Professional Medical Diagnostic Services in Onitsha, Anambra State</h2>
+            <p>State-of-the-art ultrasound, X-ray, CT scan, MRI, and laboratory testing services you can trust</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">Book Appointment</a>
+                <a href="services.html" class="btn btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <img src="images/reenelabpost.png" alt="REENE Medical Center" class="feature-banner">
+
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Medical Diagnostic Services</h2>
+                <p>Comprehensive diagnostic solutions with accurate results</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Laboratory Tests</h3>
+                    <p>Complete blood count, urinalysis, hormone tests, and more with fast, accurate results</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📡</div>
+                    <h3>Ultrasound Scanning</h3>
+                    <p>3D/4D ultrasound, obstetric, abdominal, and pelvic scans by expert sonographers</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🥼</div>
+                    <h3>X-Ray Services</h3>
+                    <p>Digital X-ray imaging for bones, chest, and diagnostic clarity</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>CT Scan & MRI</h3>
+                    <p>Advanced imaging for detailed diagnosis of internal organs and tissues</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❤️</div>
+                    <h3>ECG Testing</h3>
+                    <p>Heart health monitoring with electrocardiogram services</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>Health Screening</h3>
+                    <p>Comprehensive health check packages for preventive care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose REENE Medical Diagnostic Center?</h2>
+                <p>Your trusted partner in medical diagnostics in Anambra State</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>✅ Expert Medical Staff</h3>
+                    <p>Highly trained radiologists, lab technicians, and medical professionals</p>
+                </div>
+                <div class="feature-box">
+                    <h3>✅ Modern Equipment</h3>
+                    <p>State-of-the-art diagnostic machines for accurate results</p>
+                </div>
+                <div class="feature-box">
+                    <h3>✅ Fast Results</h3>
+                    <p>Quick turnaround time on test results without compromising accuracy</p>
+                </div>
+                <div class="feature-box">
+                    <h3>✅ Affordable Pricing</h3>
+                    <p>Competitive rates for all diagnostic services in Onitsha</p>
+                </div>
+                <div class="feature-box">
+                    <h3>✅ Convenient Location</h3>
+                    <p>Easily accessible at 50 Nwaziki Avenue, Awada, Onitsha North</p>
+                </div>
+                <div class="feature-box">
+                    <h3>✅ Patient Care</h3>
+                    <p>Compassionate service with your comfort and health as priority</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready for Your Diagnostic Test?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Book your appointment today and get accurate results from Onitsha's trusted diagnostic center</p>
+            <a href="contact.html" class="btn btn-primary" style="background: white; color: #0A4D8C;">Contact Us Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>REENE Medical Diagnostic Center</h3>
+                <p>Your trusted partner for medical diagnostics in Onitsha, Anambra State.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>📍 50 Nwaziki Avenue, Awada</li>
+                    <li>Onitsha North, Anambra State</li>
+                    <li>📞 08122190051</li>
+                    <li>📞 08035985878</li>
+                    <li>📧 reenelab@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                    <li>Saturday: 9:00 AM - 4:00 PM</li>
+                    <li>Sunday: Closed</li>
+                    <li>Emergency: Call us</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 REENE Medical Diagnostic Center. All rights reserved. | Onitsha, Anambra State, Nigeria</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

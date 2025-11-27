@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Diagnostic Services | Ultrasound, CT Scan, X-ray, MRI | Onitsha</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="description" content="Comprehensive diagnostic services: Ultrasound, X-ray, CT Scan, MRI, Laboratory Tests, ECG at REENE Medical Center, Awada, Onitsha, Anambra State.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2C3E50;
+        }
+        
+        header {
+            background: #0A4D8C;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background: #083D6F;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            background: #FF6B35;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(10, 77, 140, 0.9), rgba(10, 77, 140, 0.9)), url('images/facilty.png');
+            background-size: cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-detail {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 0;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
+        }
+        
+        .service-content {
+            padding: 40px;
+        }
+        
+        .service-content h2 {
+            color: #0A4D8C;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .service-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #444;
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28A745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #28A745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .pricing-note {
+            background: #FFF3CD;
+            border-left: 4px solid #FFC107;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 5px;
+        }
+        
+        .pricing-note h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #FF6B35;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1rem;
+            }
+            
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: #0A4D8C;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 80px 0 30px;
+                height: 100vh;
+                overflow-y: auto;
+                gap: 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                padding: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .service-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-image {
+                min-height: 250px;
+            }
+            
+            .service-content {
+                padding: 25px;
+            }
+            
+            .service-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .top-bar .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 0.85rem;
+            }
+            
+            .service-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div>📧 reenelab@gmail.com</div>
+            <div class="contact-info">
+                <a href="tel:08035985878">📞 08035985878</a>
+                <a href="tel:08122190051">📞 08122190051</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.svg" alt="REENE Medical Logo">
+                <h1>REENE MEDICAL DIAGNOSTIC CENTER</h1>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" style="color: #FF6B35;">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Our Medical Diagnostic Services</h1>
+        <p>Comprehensive diagnostic solutions for accurate health assessment</p>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-detail-grid">
+                    <img src="images/ULTRASOUND.png" alt="Ultrasound Scanner" class="service-image">
+                    <div class="service-content">
+                        <h2>Ultrasound Scanning Services</h2>
+                        <p>Our advanced ultrasound services provide clear, detailed imaging for accurate diagnosis. We use state-of-the-art ultrasound equipment operated by certified sonographers to deliver reliable results.</p>
+                        
+                        <ul class="service-features">
+                            <li>Obstetric & Gynecological Ultrasound (Pregnancy scans, pelvic scans)</li>
+                            <li>Abdominal Ultrasound (Liver, kidney, spleen, gallbladder)</li>
+                            <li>Pelvic Ultrasound</li>
+                            <li>Breast Ultrasound</li>
+                            <li>Thyroid & Neck Ultrasound</li>
+                            <li>Musculoskeletal Ultrasound</li>
+                            <li>3D/4D Pregnancy Scans</li>
+                            <li>Doppler Studies (Blood flow assessment)</li>
+                        </ul>
+                        
+                        <p><strong>Why Choose Our Ultrasound Services:</strong> High-resolution imaging, experienced sonographers, comfortable scanning environment, and quick result turnaround.</p>
+                        
+                        <a href="contact.html" class="btn">Book Ultrasound Scan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-detail-grid">
+                    <img src="images/XRAY.png" alt="Digital X-Ray Machine" class="service-image">
+                    <div class="service-content">
+                        <h2>Digital X-Ray Services</h2>
+                        <p>We offer digital X-ray imaging services that provide high-quality images with reduced radiation exposure. Our digital X-ray system ensures faster processing and more accurate diagnosis.</p>
+                        
+                        <ul class="service-features">
+                            <li>Chest X-ray (PA & Lateral views)</li>
+                            <li>Abdominal X-ray</li>
+                            <li>Skeletal X-ray (Bones & Joints)</li>
+                            <li>Spine X-ray (Cervical, Thoracic, Lumbar)</li>
+                            <li>Extremity X-ray (Arms, Legs, Hands, Feet)</li>
+                            <li>Skull X-ray</li>
+                            <li>Pelvic X-ray</li>
+                        </ul>
+                        
+                        <p><strong>Benefits:</strong> Digital technology for clearer images, minimal radiation exposure, immediate results, and electronic storage for easy access.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule X-Ray</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-detail-grid">
+                    <img src="images/CTSCAN.png" alt="CT Scanner" class="service-image">
+                    <div class="service-content">
+                        <h2>CT Scan (Computed Tomography)</h2>
+                        <p>Our CT scan services provide detailed cross-sectional images of your body, allowing for precise diagnosis of various conditions. We use advanced CT technology for comprehensive evaluation.</p>
+                        
+                        <ul class="service-features">
+                            <li>Brain & Head CT Scan</li>
+                            <li>Chest CT Scan</li>
+                            <li>Abdominal & Pelvic CT</li>
+                            <li>Spine CT Scan</li>
+                            <li>CT Angiography</li>
+                            <li>CT Guided Procedures</li>
+                            <li>Contrast & Non-contrast Studies</li>
+                        </ul>
+                        
+                        <p><strong>Applications:</strong> Ideal for detecting tumors, internal injuries, blood clots, infections, and structural abnormalities with high precision.</p>
+                        
+                        <a href="contact.html" class="btn">Book CT Scan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-detail-grid">
+                    <img src="images/MRI.png" alt="MRI Scanner" class="service-image">
+                    <div class="service-content">
+                        <h2>MRI Scanning (Magnetic Resonance Imaging)</h2>
+                        <p>MRI provides detailed images of organs, soft tissues, bones, and internal structures without using radiation. Our advanced MRI services offer superior diagnostic capabilities.</p>
+                        
+                        <ul class="service-features">
+                            <li>Brain & Neurological MRI</li>
+                            <li>Spinal MRI</li>
+                            <li>Musculoskeletal MRI (Joints, Muscles)</li>
+                            <li>Abdominal MRI</li>
+                            <li>Pelvic MRI</li>
+                            <li>Cardiac MRI</li>
+                            <li>MR Angiography</li>
+                        </ul>
+                        
+                        <p><strong>Advantages:</strong> No radiation exposure, excellent soft tissue contrast, detailed visualization, and non-invasive imaging technique.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule MRI</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-detail-grid">
+                    <img src="images/LAB.png" alt="Laboratory Equipment" class="service-image">
+                    <div class="service-content">
+                        <h2>Clinical Laboratory Services</h2>
+                        <p>Our fully equipped laboratory provides comprehensive testing services with accurate and timely results. We maintain strict quality control standards for all tests.</p>
+                        
+                        <ul class="service-features">
+                            <li>Complete Blood Count (CBC)</li>
+                            <li>Blood Chemistry & Metabolic Panel</li>
+                            <li>Liver Function Tests (LFT)</li>
+                            <li>Kidney Function Tests (RFT)</li>
+                            <li>Lipid Profile</li>
+                            <li>Blood Sugar Tests (Fasting, Random, HbA1c)</li>
+                            <li>Thyroid Function Tests</li>
+                            <li>Hormone Tests</li>
+                            <li>Urinalysis</li>
+                            <li>Pregnancy Tests</li>
+                            <li>HIV, Hepatitis, & STI Screening</li>
+                            <li>Tumor Markers</li>
+                            <li>Electrolyte Studies</li>
+                        </ul>
+                        
+                        <p><strong>Quality Assurance:</strong> Certified lab technicians, modern equipment, accurate results, and confidential service.</p>
+                        
+                        <a href="contact.html" class="btn">Book Lab Test</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-detail-grid">
+                    <img src="images/ECG.png" alt="ECG Machine" class="service-image">
+                    <div class="service-content">
+                        <h2>ECG / EKG Services</h2>
+                        <p>Electrocardiogram (ECG) testing to assess your heart's electrical activity and detect cardiac conditions. Quick, painless, and non-invasive procedure.</p>
+                        
+                        <ul class="service-features">
+                            <li>Resting ECG</li>
+                            <li>Exercise Stress Test</li>
+                            <li>24-Hour Holter Monitoring</li>
+                            <li>Heart Rate & Rhythm Analysis</li>
+                        </ul>
+                        
+                        <p><strong>Detects:</strong> Irregular heartbeats (arrhythmias), heart attacks, coronary artery disease, heart enlargement, and other cardiac conditions.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule ECG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <h3>💰 Affordable & Transparent Pricing</h3>
+                <p>At REENE Medical Diagnostic Center, we offer competitive and transparent pricing for all our services. Contact us directly for specific pricing information and available health packages. We accept cash and bank transfers.</p>
+                <p><strong>Call us:</strong> 08122190051 or 08035985878 for pricing inquiries.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>REENE Medical Diagnostic Center</h3>
+                <p>Your trusted partner for medical diagnostics in Onitsha, Anambra State.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>📍 50 Nwaziki Avenue, Awada</li>
+                    <li>Onitsha North, Anambra State</li>
+                    <li>📞 08122190051</li>
+                    <li>📞 08035985878</li>
+                    <li>📧 reenelab@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                    <li>Saturday: 9:00 AM - 4:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 REENE Medical Diagnostic Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 
