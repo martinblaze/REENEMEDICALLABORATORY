@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact REENE Medical Diagnostic Center | Book Appointment in Onitsha</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="description" content="Contact REENE Medical Diagnostic Center at 50 Nwaziki Avenue, Awada, Onitsha. Call 08122190051 or 08035985878. Book your diagnostic appointment today.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2C3E50;
+        }
+        
+        header {
+            background: #0A4D8C;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background: #083D6F;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            background: #FF6B35;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(10, 77, 140, 0.9), rgba(10, 77, 140, 0.9)), url('images/RECEPTION.png');
+            background-size: cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #0A4D8C;
+        }
+        
+        .contact-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            color: #0A4D8C;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .contact-card p {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .contact-card a {
+            color: #0A4D8C;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-card a:hover {
+            color: #28A745;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h2 {
+            color: #0A4D8C;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2C3E50;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E0E0E0;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0A4D8C;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: #28A745;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .map-section {
+            background: #F0F7FF;
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .hours-table th,
+        .hours-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+        .hours-table th {
+            background: #0A4D8C;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .hours-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .hours-table tr:hover {
+            background: #F8F9FA;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #FF6B35;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1rem;
+            }
+            
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: #0A4D8C;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 80px 0 30px;
+                height: 100vh;
+                overflow-y: auto;
+                gap: 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                padding: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .contact-form h2 {
+                font-size: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .top-bar .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hours-table th,
+            .hours-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 0.85rem;
+            }
+            
+            .contact-card {
+                padding: 20px;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div>📧 reenelab@gmail.com</div>
+            <div class="contact-info">
+                <a href="tel:08122190051">📞 08122190051</a>
+                <a href="tel:08035985878">📞 08035985878</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.svg" alt="REENE Medical Logo">
+                <h1>REENE MEDICAL DIAGNOSTIC CENTER</h1>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" style="color: #FF6B35;">Contact</a></li>
+                <li><a href="contact.html" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Contact Us</h1>
+        <p>Get in touch with REENE Medical Diagnostic Center</p>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📍</div>
+                        <h3>Visit Our Location</h3>
+                        <p><strong>50 Nwaziki Avenue, Awada</strong></p>
+                        <p>Idemili north GRA, Anambra State</p>
+                        <p>Nigeria</p>
+                        <a href="https://maps.app.goo.gl/Xgg4RYkrw9eHrRh2A" target="_blank">Get Directions →</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p><a href="tel:08122190051">08122190051</a></p>
+                        <p><a href="tel:08035985878">08035985878</a></p>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">Available during business hours</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:reenelab@gmail.com">reenelab@gmail.com</a></p>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">We respond within 24 hours</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">🕐</div>
+                        <h3>Opening Hours</h3>
+                        <table class="hours-table">
+                            <tr>
+                                <td><strong>Monday - Friday</strong></td>
+                                <td>8:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Saturday</strong></td>
+                                <td>9:00 AM - 4:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sunday</strong></td>
+                                <td>Closed</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <div id="alertBox" class="alert"></div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="080XXXXXXXX">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="youremail@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service of Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="ultrasound">Ultrasound Scan</option>
+                                <option value="xray">X-Ray</option>
+                                <option value="ctscan">CT Scan</option>
+                                <option value="mri">MRI</option>
+                                <option value="laboratory">Laboratory Tests</option>
+                                <option value="ecg">ECG</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 style="text-align: center; color: #0A4D8C; margin-bottom: 20px; font-size: 2rem;">Find Us on the Map</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">50 Nwaziki Avenue, Awada, Idemili north GRA, Anambra State</p>
+            
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.0812510753954!2d6.807227299999999!3d6.1197653999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104393210c6908e9%3A0xb23de04aee6472cc!2sREENE%20MEDICAL%20DIAGNOSTIC%20CENTRE%2C50%20NWAZIKI%20AVENUE%20AWADA%2C%20ONITSHA%2C%20ANAMBRA%2CNIGERIA!5e0!3m2!1sen!2sng!4v1764349319934!5m2!1sen!2sng" 
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 10px; margin-top: 30px; box-shadow: 0 3px 15px rgba(0,0,0,0.1);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(135deg, #0A4D8C, #083D6F); color: white; text-align: center; padding: 80px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Ready to Book Your Appointment?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Get professional diagnostic services at REENE Medical Diagnostic Center today</p>
+            <a href="tel:08035985878" style="background: white; color: #0A4D8C; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-block;">Call Now to Book</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>REENE Medical Diagnostic Center</h3>
+                <p>Your trusted partner for medical diagnostics in Onitsha, Anambra State.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>📍 50 Nwaziki Avenue, Awada</li>
+                    <li> Idemili north GRA, Anambra State</li>
+                    <li>📞 08122190051</li>
+                    <li>📞 08035985878</li>
+                    <li>📧 reenelab@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                    <li>Saturday: 9:00 AM - 4:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 REENE Medical Diagnostic Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const alertBox = document.getElementById('alertBox');
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            const subject = encodeURIComponent('New Contact Form Submission - REENE Medical');
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Phone: ${phone}\n` +
+                `Email: ${email}\n` +
+                `Service of Interest: ${service}\n\n` +
+                `Message:\n${message}`
+            );
+            
+            const mailtoLink = `mailto:reenelab@gmail.com?subject=${subject}&body=${body}`;
+            
+            window.location.href = mailtoLink;
+            
+            alertBox.className = 'alert alert-success';
+            alertBox.style.display = 'block';
+            alertBox.textContent = 'Opening your email client... Please send the message to complete your inquiry.';
+            
+            setTimeout(() => {
+                this.reset();
+                alertBox.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

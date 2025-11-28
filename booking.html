@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | REENE Medical Diagnostic Center Onitsha</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="description" content="Book your diagnostic appointment at REENE Medical Center, Awada, Onitsha. Easy online booking for ultrasound, X-ray, CT scan, MRI, and lab tests.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2C3E50;
+        }
+        
+        header {
+            background: #0A4D8C;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background: #083D6F;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            background: #FF6B35;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(10, 77, 140, 0.9), rgba(10, 77, 140, 0.9)), url('images/RECEPTION.png');
+            background-size: cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .booking-info {
+            background: #F0F7FF;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .booking-info h2 {
+            color: #0A4D8C;
+            margin-bottom: 20px;
+        }
+        
+        .booking-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .booking-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .booking-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .booking-card h3 {
+            color: #0A4D8C;
+            margin-bottom: 15px;
+        }
+        
+        .booking-card p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #28A745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #0A4D8C;
+        }
+        
+        .btn-secondary:hover {
+            background: #083D6F;
+        }
+        
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #FF6B35;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1rem;
+            }
+            
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: #0A4D8C;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 80px 0 30px;
+                height: 100vh;
+                overflow-y: auto;
+                gap: 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                padding: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .booking-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .top-bar .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .booking-info {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 0.85rem;
+            }
+            
+            .booking-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div>📧 reenelab@gmail.com</div>
+            <div class="contact-info">
+                <a href="tel:08035985878">📞 08035985878</a>
+                <a href="tel:08122190051">📞 08122190051</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.svg" alt="REENE Medical Logo">
+                <h1>REENE MEDICAL DIAGNOSTIC CENTER</h1>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="cta-button" style="color: #FF6B35;">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Book Your Appointment</h1>
+        <p>Easy and convenient appointment booking at REENE Medical Diagnostic Center</p>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="booking-info">
+                <h2>Schedule Your Diagnostic Test Today</h2>
+                <p style="font-size: 1.1rem; color: #555;">Choose your preferred method to book an appointment with us. We're here to serve you with professional medical diagnostic services.</p>
+            </div>
+
+            <div class="booking-methods">
+                <div class="booking-card">
+                    <div class="booking-icon">📞</div>
+                    <h3>Call Us Directly</h3>
+                    <p>Speak with our staff to schedule your appointment and get immediate assistance</p>
+                    <a href="tel:08035985878" class="btn">Call 08035985878</a>
+                    <div style="margin-top: 10px;">
+                        <a href="tel:08122190051" class="btn btn-secondary">Call 08122190051</a>
+                    </div>
+                </div>
+
+                <div class="booking-card">
+                    <div class="booking-icon">📧</div>
+                    <h3>Email Booking</h3>
+                    <p>Send us your appointment request via email and we'll get back to you promptly</p>
+                    <a href="mailto:reenelab@gmail.com?subject=Appointment Booking Request" class="btn">Email Us</a>
+                </div>
+
+                <div class="booking-card">
+                    <div class="booking-icon">💬</div>
+                    <h3>Visit Contact Page</h3>
+                    <p>Fill out our contact form with your appointment details and preferences</p>
+                    <a href="contact.html" class="btn">Contact Form</a>
+                </div>
+
+                <div class="booking-card">
+                    <div class="booking-icon">🏥</div>
+                    <h3>Walk-In</h3>
+                    <p>Visit our center directly at 50 Nwaziki Avenue, Awada, Onitsha North</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=50+Nwaziki+Avenue+Awada+Onitsha" target="_blank" class="btn">Get Directions</a>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 10px; margin-top: 50px; box-shadow: 0 3px 15px rgba(0,0,0,0.1);">
+                <h2 style="color: #0A4D8C; text-align: center; margin-bottom: 30px;">Our Services Available for Booking</h2>
+                <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        Ultrasound Scanning (2D, 3D, 4D)
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        Digital X-Ray Services
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        CT Scan (Computed Tomography)
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        MRI Scanning
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        Laboratory Tests (All Types)
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        ECG / EKG Testing
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        Health Screening Packages
+                    </li>
+                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #28A745; font-weight: bold;">✓</span>
+                        And More...
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: #FFF3CD; border-left: 4px solid #FFC107; padding: 25px; margin-top: 40px; border-radius: 5px;">
+                <h3 style="color: #856404; margin-bottom: 15px;">📅 Opening Hours</h3>
+                <p style="color: #856404; margin-bottom: 10px;"><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</p>
+                <p style="color: #856404; margin-bottom: 10px;"><strong>Saturday:</strong> 9:00 AM - 4:00 PM</p>
+                <p style="color: #856404;"><strong>Sunday:</strong> Closed</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(135deg, #0A4D8C, #083D6F); color: white; text-align: center; padding: 80px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Need Help with Booking?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Our friendly staff is ready to assist you with scheduling your appointment</p>
+            <a href="tel:08035985878" style="background: white; color: #0A4D8C; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-block;">Call Us Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>REENE Medical Diagnostic Center</h3>
+                <p>Your trusted partner for medical diagnostics in Onitsha, Anambra State.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>📍 50 Nwaziki Avenue, Awada</li>
+                    <li>Onitsha North, Anambra State</li>
+                    <li>📞 08035985878</li>
+                    <li>📞 08122190051</li>
+                    <li>📧 reenelab@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                    <li>Saturday: 9:00 AM - 4:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 REENE Medical Diagnostic Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

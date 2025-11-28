@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About REENE Medical Diagnostic Center | Leading Diagnostics in Onitsha</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="description" content="Learn about REENE Medical Diagnostic Center in Awada, Onitsha. Expert medical diagnostics, modern equipment, and compassionate care in Anambra State.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2C3E50;
+        }
+        
+        header {
+            background: #0A4D8C;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background: #083D6F;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            background: #FF6B35;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(10, 77, 140, 0.9), rgba(10, 77, 140, 0.9)), url('images/facility.png');
+            background-size: cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .about-content h2 {
+            color: #0A4D8C;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .values-section {
+            background: #F0F7FF;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .value-card h3 {
+            color: #0A4D8C;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .team-photo {
+            background: #E3F2FD;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid #0A4D8C;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .team-member h4 {
+            color: #0A4D8C;
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+        
+        .team-member p {
+            color: #666;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #FF6B35;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1rem;
+            }
+            
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: #0A4D8C;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 80px 0 30px;
+                height: 100vh;
+                overflow-y: auto;
+                gap: 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                padding: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .top-bar .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 0.85rem;
+            }
+            
+            .team-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div>📧 reenelab@gmail.com</div>
+            <div class="contact-info">
+                <a href="tel:08122190051">📞 08122190051</a>
+                <a href="tel:08035985878">📞 08035985878</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.svg" alt="REENE Medical Logo">
+                <h1>REENE MEDICAL DIAGNOSTIC CENTER</h1>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" style="color: #FF6B35;">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>About REENE Medical Diagnostic Center</h1>
+        <p>Excellence in Medical Diagnostics Since Our Establishment</p>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="about-grid">
+                <img src="images/facilty.png" alt="REENE Medical Center" class="about-image">
+                <div class="about-content">
+                    <h2>Who We Are</h2>
+                    <p>REENE Medical Diagnostic Center is a leading medical diagnostic facility located in the heart of Awada, Onitsha North, Anambra State. We are dedicated to providing comprehensive, accurate, and timely diagnostic services to individuals and healthcare providers across Onitsha and surrounding communities.</p>
+                    <p>Our state-of-the-art facility is equipped with modern diagnostic equipment operated by highly trained medical professionals who are committed to excellence in patient care. We understand that accurate diagnosis is the foundation of effective treatment, which is why we invest in the latest technology and continuous staff training.</p>
+                    <p>With years of experience serving the Anambra State community, we have built a reputation for reliability, professionalism, and compassionate care. Our mission is to make quality diagnostic services accessible and affordable to everyone who needs them.</p>
+                </div>
+            </div>
+
+            <div class="about-grid" style="margin-top: 60px;">
+                <div class="about-content">
+                    <h2>Our Mission & Vision</h2>
+                    <p><strong style="color: #0A4D8C;">Mission:</strong> To provide accurate, reliable, and timely medical diagnostic services using state-of-the-art technology while maintaining the highest standards of patient care and professionalism.</p>
+                    <p><strong style="color: #0A4D8C;">Vision:</strong> To be the most trusted and preferred medical diagnostic center in Anambra State and the South-East region of Nigeria, recognized for excellence in service delivery and patient satisfaction.</p>
+                </div>
+                <img src="images/RECEPTION.png" alt="REENE Reception" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2 style="text-align: center; color: #0A4D8C; font-size: 2rem; margin-bottom: 20px;">Our Core Values</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">The principles that guide our service delivery</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Accuracy</h3>
+                    <p>We are committed to delivering precise and reliable diagnostic results through rigorous quality control and advanced technology.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Compassion</h3>
+                    <p>We treat every patient with dignity, respect, and empathy, understanding that healthcare is a deeply personal matter.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Efficiency</h3>
+                    <p>We value your time and ensure quick turnaround on results without compromising quality or accuracy.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🛡️</div>
+                    <h3>Integrity</h3>
+                    <p>We maintain the highest ethical standards in all our operations and protect patient confidentiality at all times.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h3>Excellence</h3>
+                    <p>We continuously improve our services and invest in the latest technology to provide world-class diagnostic care.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Affordability</h3>
+                    <p>Quality healthcare should be accessible to all. We offer competitive pricing without compromising service quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 style="text-align: center; color: #0A4D8C; font-size: 2rem; margin-bottom: 20px;">Our Leadership Team</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px;">Experienced professionals dedicated to your health</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="images/medicaldirector.jpg" alt="Medical Director">
+                    </div>
+                    <h4>Dr. Augustine Chinedu Ihim</h4>
+                    <p>Medical Director</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="images/hrmphoto.png" alt="Human Recourse Manager  ">
+                    </div>
+                    <h4>Mrs. Maureen Chinenye Ihim</h4>
+                    <p>Chief Executive Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>REENE Medical Diagnostic Center</h3>
+                <p>Your trusted partner for medical diagnostics in Onitsha, Anambra State.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>📍 50 Nwaziki Avenue, Awada</li>
+                    <li>Onitsha North, Anambra State</li>
+                    <li>📞 08122190051</li>
+                    <li>📞 08035985878</li>
+                    <li>📧 reenelab@gmail.com</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                    <li>Saturday: 9:00 AM - 4:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 REENE Medical Diagnostic Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
