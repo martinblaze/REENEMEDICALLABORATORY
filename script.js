@@ -1,97 +1,109 @@
-// Dark Mode Toggle
+// ── Dark Mode ──
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
 
-// Check for saved user preference, if any, on load
-const currentTheme = localStorage.getItem('theme') || 'light';
-body.setAttribute('data-theme', currentTheme);
-
 if (darkModeToggle) {
-    // Update toggle button state
-    if (currentTheme === 'dark') {
-        darkModeToggle.innerHTML = '☀️';
-        darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
-    }
+  const saved = localStorage.getItem('theme') || 'light';
+  body.setAttribute('data-theme', saved);
+  darkModeToggle.innerHTML = saved === 'dark' ? '☀️' : '🌙';
 
-    darkModeToggle.addEventListener('click', () => {
-        let theme = body.getAttribute('data-theme');
-
-        if (theme === 'light') {
-            body.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            darkModeToggle.innerHTML = '☀️';
-            darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
-        } else {
-            body.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            darkModeToggle.innerHTML = '🌙';
-            darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
-        }
-    });
+  darkModeToggle.addEventListener('click', () => {
+    const theme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    darkModeToggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+    darkModeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  });
 }
 
-// Mobile Navigation Toggle
+// ── Mobile Nav ──
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
 if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+  });
 
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
     });
+  });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
-    });
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
 }
 
-// Contact Form Handler (for contact.html)
+// ── Scroll Reveal ──
+const reveals = document.querySelectorAll('.reveal');
+if (reveals.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  // Stagger cards in grids
+  document.querySelectorAll('.services-grid .service-card, .features-grid .feature-box, .values-grid .value-card, .team-grid .team-member, .gallery-grid .gallery-item, .booking-methods .booking-card').forEach((el, i) => {
+    el.dataset.delay = (i % 3) * 80;
+  });
+
+  reveals.forEach(el => observer.observe(el));
+}
+
+// ── Header scroll shadow ──
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (header) {
+    header.style.boxShadow = window.scrollY > 10
+      ? '0 4px 24px rgba(0,0,0,0.35)'
+      : '0 2px 20px rgba(0,0,0,0.25)';
+  }
+}, { passive: true });
+
+// ── Contact Form ──
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const alertBox = document.getElementById('alertBox');
+    const name    = document.getElementById('name').value;
+    const phone   = document.getElementById('phone').value;
+    const email   = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
 
-        const alertBox = document.getElementById('alertBox');
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
+    const subject = encodeURIComponent('Appointment / Inquiry — Reene Medical Diagnostics');
+    const bodyText = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`
+    );
 
-        const subject = encodeURIComponent('New Contact Form Submission - REENE Medical');
-        const body = encodeURIComponent(
-            `Name: ${name}\n` +
-            `Phone: ${phone}\n` +
-            `Email: ${email}\n` +
-            `Service of Interest: ${service}\n\n` +
-            `Message:\n${message}`
-        );
+    window.location.href = `mailto:info@reenemedicaldiagnostics.com?subject=${subject}&body=${bodyText}`;
 
-        const mailtoLink = `mailto:info@reenemedicaldiagnostics.com?subject=${subject}&body=${body}`;
-
-        window.location.href = mailtoLink;
-
-        if (alertBox) {
-            alertBox.className = 'alert alert-success';
-            alertBox.style.display = 'block';
-            alertBox.textContent = 'Opening your email client... Please send the message to complete your inquiry.';
-
-            setTimeout(() => {
-                this.reset();
-                alertBox.style.display = 'none';
-            }, 3000);
-        }
-    });
+    if (alertBox) {
+      alertBox.className = 'alert alert-success';
+      alertBox.style.display = 'block';
+      alertBox.textContent = 'Opening your email client... Please send the message to complete your inquiry.';
+      setTimeout(() => {
+        this.reset();
+        alertBox.style.display = 'none';
+      }, 4000);
+    }
+  });
 }
