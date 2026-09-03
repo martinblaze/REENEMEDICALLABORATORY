@@ -22,7 +22,87 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MedicalClinic","name":"Reene Medical Diagnostics","url":"https://reenemedicaldiagnostics.com/","image":"https://reenemedicaldiagnostics.com/images/reenelabpost.png","telephone":["+2348122190051","+2348035985878"],"email":"info@reenemedicaldiagnostics.com","address":{"@type":"PostalAddress","streetAddress":"50 Nwaziki Avenue, Awada, Obosi","addressLocality":"Onitsha","addressRegion":"Anambra State","addressCountry":"NG"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"medicalSpecialty":["Radiology","DiagnosticImaging"]}
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "@id": "https://reenemedicaldiagnostics.com/#clinic",
+  "name": "Reene Medical Diagnostics Centre",
+  "alternateName": "Reene Medical Diagnostics",
+  "url": "https://reenemedicaldiagnostics.com/",
+  "logo": "https://reenemedicaldiagnostics.com/images/ReeneLab-logo.png",
+  "image": [
+    "https://reenemedicaldiagnostics.com/images/facility.png",
+    "https://reenemedicaldiagnostics.com/images/LAB.png",
+    "https://reenemedicaldiagnostics.com/images/RECEPTION.png"
+  ],
+  "description": "Technology-driven diagnostic centre in Awada, Obosi, Onitsha LGA offering laboratory tests, ultrasound scanning, digital X-ray and ECG with accurate, timely results.",
+  "telephone": "+2348122190051",
+  "email": "info@reenemedicaldiagnostics.com",
+  "currenciesAccepted": "NGN",
+  "paymentAccepted": "Cash, Bank transfer",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "50 Nwaziki Avenue, Awada, Obosi",
+    "addressLocality": "Onitsha",
+    "addressRegion": "Anambra State",
+    "addressCountry": "NG"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 6.1197654, "longitude": 6.8072273 },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=REENE+Medical+Diagnostics+Awada+Onitsha",
+  "areaServed": [
+    { "@type": "City",  "name": "Onitsha" },
+    { "@type": "Place", "name": "Awada" },
+    { "@type": "Place", "name": "Obosi" },
+    { "@type": "AdministrativeArea", "name": "Idemili North LGA" },
+    { "@type": "AdministrativeArea", "name": "Anambra State" }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00" }
+  ],
+  "medicalSpecialty": ["Radiology", "DiagnosticImaging", "Pathology"],
+  "availableService": [
+    { "@type": "MedicalTest", "name": "Laboratory Tests", "description": "Complete blood count, blood chemistry, liver and kidney function, lipid profile, thyroid and hormone tests, urinalysis and screening.", "url": "https://reenemedicaldiagnostics.com/services#laboratory" },
+    { "@type": "MedicalTest", "name": "Ultrasound Scan", "description": "Obstetric, abdominal, pelvic, breast, thyroid and musculoskeletal ultrasound, including 3D and 4D pregnancy scans and Doppler studies.", "url": "https://reenemedicaldiagnostics.com/services#ultrasound" },
+    { "@type": "MedicalTest", "name": "CT Scan", "description": "Computed tomography imaging of the brain, chest, abdomen, pelvis and spine, including CT angiography and contrast studies.", "url": "https://reenemedicaldiagnostics.com/services#ct-scan" },
+    { "@type": "MedicalTest", "name": "MRI Scan", "description": "Magnetic resonance imaging for neurological, spinal, musculoskeletal, abdominal and pelvic assessment, without ionising radiation.", "url": "https://reenemedicaldiagnostics.com/services#mri" },
+    { "@type": "MedicalTest", "name": "Digital X-Ray", "description": "Chest, abdominal, skeletal, spine, extremity, skull and pelvic radiography using digital imaging.", "url": "https://reenemedicaldiagnostics.com/services#xray" },
+    { "@type": "MedicalTest", "name": "ECG", "description": "Resting ECG, exercise stress testing and 24-hour Holter monitoring for cardiac assessment.", "url": "https://reenemedicaldiagnostics.com/services#ecg" }
+  ],
+  "founder": { "@id": "https://reenemedicaldiagnostics.com/dr-augustine-ihim#person" },
+  "employee": { "@id": "https://reenemedicaldiagnostics.com/dr-augustine-ihim#person" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://reenemedicaldiagnostics.com/dr-augustine-ihim#person",
+  "name": "Augustine Chinedu Ihim",
+  "honorificPrefix": "Dr.",
+  "jobTitle": "Founder & Medical Director",
+  "url": "https://reenemedicaldiagnostics.com/dr-augustine-ihim",
+  "sameAs": ["https://profile.unizik.edu.ng/nau3372"],
+  "worksFor": { "@id": "https://reenemedicaldiagnostics.com/#clinic" },
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Nnamdi Azikiwe University",
+    "department": { "@type": "Organization", "name": "Department of Clinical Chemistry, Faculty of Medical Laboratory Science" }
+  },
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "PhD, Chemical Pathology — Nnamdi Azikiwe University (2020)" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "MSc, Chemical Pathology — Imo State University (2012)" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "BMLS, Medical Laboratory Science — Imo State University (2000)" }
+  ],
+  "memberOf": [
+    { "@type": "Organization", "name": "Medical Laboratory Science Council of Nigeria (MLSCN)" },
+    { "@type": "Organization", "name": "Health and Care Professions Council, United Kingdom (HCPC UK)" },
+    { "@type": "Organization", "name": "International Federation of Clinical Chemistry and Laboratory Medicine" },
+    { "@type": "Organization", "name": "Association of Clinical Chemists of Nigeria" },
+    { "@type": "Organization", "name": "International Association of Public Health Logisticians" }
+  ],
+  "knowsAbout": ["Clinical Chemistry", "Chemical Pathology", "Medical Laboratory Science", "Diagnostic Testing"]
+}
 </script>
 </head>
 <body>
@@ -280,6 +360,68 @@
   </div>
 </section>
 
+<!-- ═══ TESTIMONIALS (verbatim Google reviews) ═══ -->
+<section class="sec on-bone" style="padding-top:0;">
+  <div class="shell">
+    <div class="rule" style="margin-bottom:clamp(40px,6vw,80px);"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(28px,4vw,48px);">
+      <div>
+        <span class="eyebrow rv">In their words</span>
+        <h2 class="display d-md rv" style="margin-top:16px;max-width:18ch;">What patients say after their visit.</h2>
+        <p class="rating-line rv" data-delay="90">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.7 5.9 6.3.8-4.6 4.5 1.1 6.3L12 17.6l-5.5 2.9 1.1-6.3L3 9.7l6.3-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.7 5.9 6.3.8-4.6 4.5 1.1 6.3L12 17.6l-5.5 2.9 1.1-6.3L3 9.7l6.3-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.7 5.9 6.3.8-4.6 4.5 1.1 6.3L12 17.6l-5.5 2.9 1.1-6.3L3 9.7l6.3-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.7 5.9 6.3.8-4.6 4.5 1.1 6.3L12 17.6l-5.5 2.9 1.1-6.3L3 9.7l6.3-.8L12 3Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.7 5.9 6.3.8-4.6 4.5 1.1 6.3L12 17.6l-5.5 2.9 1.1-6.3L3 9.7l6.3-.8L12 3Z"/></svg>
+          </span>
+          <b>4.9</b> average from <b>99+</b> reviews on Google
+        </p>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=REENE+Medical+Diagnostics+Awada+Onitsha"
+         target="_blank" rel="noopener" class="link-sweep rv">
+        Read on Google
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="quotes rv">
+      <blockquote class="quote">
+        <p>“Very satisfied with my visit. The technician was knowledgeable and explained everything clearly. The diagnostic equipment appeared modern and well-maintained. Quick turnaround on results.”</p>
+        <footer><cite>Rejoice Ezeani</cite><time>1 month ago</time></footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“I highly recommend Reene to anyone seeking dependable, professional, and compassionate diagnostic services. They are definitely setting a high standard in medical diagnostics.”</p>
+        <footer><cite>Chibuike Henry</cite><time>11 months ago</time></footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“This lab saved my life. The personnel are professional, they are well trusted and tested. I highly recommend them.”</p>
+        <footer><cite>Nnenna Robert</cite><time>5 months ago</time></footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“My go-to for all my medical tests. From the moment I walk in, I'm greeted with a smile. I've always received my results quickly and I have complete trust in their accuracy.”</p>
+        <footer><cite>Chinma Zara</cite><time>2 years ago</time></footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“Reene gave honest professional advice and are customer-friendly. My first time coming and I don't regret the experience.”</p>
+        <footer><cite>Mboamaka Anene</cite><time>1 year ago</time></footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“The laboratory is very conducive and the scientists are professionals.”</p>
+        <footer><cite>Kelechi Obi Caroline</cite><time>11 months ago</time></footer>
+      </blockquote>
+    </div>
+
+    <p class="body-sm dim rv" style="margin-top:22px;">
+      <span class="quote-src">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.9 6.3.8-4.6 4.5 1.1 6.3L12 17.6l-5.5 2.9 1.1-6.3L3 9.7l6.3-.8L12 3Z"/></svg>
+        Verified Google reviews · published as written
+      </span>
+    </p>
+  </div>
+</section>
+
 <!-- ═══ CTA ═══ -->
 <section class="sec on-ink cta">
   <div class="shell cta-in">
@@ -312,6 +454,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>

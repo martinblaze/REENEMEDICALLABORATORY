@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# No crawl value — verification stub and build tooling
+Disallow: /google22bdfea35615915d.html
+Disallow: /_gen_service_pages.py
+Disallow: /_service_template.html
+
+Sitemap: https://reenemedicaldiagnostics.com/sitemap.xml
