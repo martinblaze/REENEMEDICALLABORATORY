@@ -1,0 +1,171 @@
+CLAUDE CODE PROMPT: Fix AI-Generated Look & Make Reene Website Professional
+
+You are redesigning a medical diagnostics website (Reene Medical Diagnostics) that currently looks too AI-generated and generic. Make it look professional and real by following these specific rules:
+
+## IMMEDIATE FIXES - DO THESE FIRST:
+
+1. **TYPOGRAPHY HIERARCHY** - Currently too uniform
+   - H1: 72px bold, 1.1 line-height (for hero)
+   - H2: 40px bold, centered for section titles
+   - Body: 16px regular, 1.6 line-height (INCREASE from current)
+   - Make text BREATHE - more line height = less AI-generated look
+
+2. **SPACING & WHITE SPACE** - Add breathing room
+   - Increase section margins from current to 60-80px vertical
+   - Card padding: 28px (not 20px)
+   - Paragraph gaps: 24px between blocks
+   - Between sections: inconsistent spacing makes it feel intentional, not templated
+
+3. **REMOVE GENERIC LOOK** - Replace placeholder text everywhere
+   - Change "50+ Diagnostic Services" → "Laboratory Tests, Ultrasound, CT Scan, MRI, X-Ray, ECG"
+   - Change "Comprehensive diagnostics" → "Certified ultrasonographers using Siemens equipment, 24-48 hour reports"
+   - Add real numbers: "Served 10,000+ patients since 2008" not just "trusted"
+   - Add locations: "Awada, Onitsha LGA, Anambra State" everywhere
+
+4. **COLOR DISCIPLINE** - Stop coloring everything
+   - Primary blue (#003D7A) ONLY for buttons and key highlights
+   - Accent red (#FF4B4B) for badges/icons only
+   - Background: #F8F9FB (not white)
+   - 70% of page should be white/gray/neutral
+   - Remove background color from service cards - use borders instead
+
+5. **CARDS & COMPONENTS** - Professional treatment
+   - Border: 1px solid #E2E8F0 (not shadow)
+   - Rounded: 12px (not 8px)
+   - Hover: Move up 4px + shadow (not scale)
+   - Icon backgrounds: circular #EFF6FF with 56px icon inside
+
+6. **FORMS** - Make them look real
+   - Input border: 2px #E2E8F0
+   - Focus state: blue border + soft shadow
+   - Labels: 14px, positioned 12px ABOVE input (not inside)
+   - Buttons: 44px minimum height, square corners or 8px rounded
+   - Hover: background darkens, smooth transition
+
+7. **IMAGES** - Replace stock/AI look
+   - All medical facility photos need actual quality photos
+   - Staff: real professional headshots, not AI faces
+   - Add testimonial avatars: 48x48px circles with borders
+   - Lazy load all images
+
+8. **LAYOUT FIXES**
+   - Hero: Text LEFT-ALIGNED (not centered), image on right
+   - Services: 3-column grid masonry layout
+   - Gallery: Mix tall/wide/square images (not uniform grid)
+   - About: Left text + right image (asymmetric, not balanced)
+
+9. **REMOVE AI PATTERNS** - These make it look generated
+   - ❌ All cards same size/spacing
+   - ❌ Every section perfectly balanced left/right
+   - ❌ Icons with identical styling everywhere
+   - ❌ Generic messages like "Your health, our priority"
+   - ❌ Placeholder testimonials
+   - ✅ Use real patient quotes with dates
+   - ✅ Mix layout patterns (full-width, 2-col, 3-col, masonry)
+   - ✅ Varied section designs
+
+10. **MICRO-INTERACTIONS** - Professional feel
+    - Button hover: fade background color 0.3s smooth (not instant)
+    - Links: underline on hover only
+    - Page load: fade in 0.4s from top
+    - Scroll: elements fade in naturally (not bounce/scale)
+    - No extreme animations - keep it subtle
+
+11. **LUCIDE REACT ICONS** - Professional & Consistent
+    - Import from 'lucide-react' (NOT emoji)
+    - Size: 64px for services, 56px for features, 32px for navigation
+    - Stroke-width: 1.5 (thin, professional look)
+    - Color: #003D7A (blue) by default, #FF4B4B (red) for accents
+    - Background circles: #EFF6FF (light blue) behind each icon
+    
+    Service Icons to Use:
+    - Laboratory Tests: <Microscope size={64} strokeWidth={1.5} />
+    - Ultrasound Scan: <Waves size={64} strokeWidth={1.5} />
+    - CT Scan: <Zap size={64} strokeWidth={1.5} />
+    - MRI Scan: <Radio size={64} strokeWidth={1.5} />
+    - X-Ray: <Scan size={64} strokeWidth={1.5} />
+    - ECG: <Heart size={64} strokeWidth={1.5} />
+    
+    Navigation Icons:
+    - Home: <Home size={20} />
+    - Services: <Activity size={20} />
+    - About: <Building2 size={20} />
+    - Contact: <Phone size={20} />
+    - Calendar: <Calendar size={20} />
+
+11. **LUCIDE REACT ICONS** - Professional & Consistent
+    - Import from 'lucide-react' (NOT emoji)
+    - Size: 64px for services, 56px for features, 32px for navigation
+    - Stroke-width: 1.5 (thin, professional look)
+    - Color: #003D7A (blue) by default, #FF4B4B (red) for accents
+    - Background circles: #EFF6FF (light blue) behind each icon
+    
+    Service Icons to Use:
+    - Laboratory Tests: <Microscope size={64} strokeWidth={1.5} />
+    - Ultrasound Scan: <Waves size={64} strokeWidth={1.5} />
+    - CT Scan: <Zap size={64} strokeWidth={1.5} />
+    - MRI Scan: <Radio size={64} strokeWidth={1.5} />
+    - X-Ray: <Scan size={64} strokeWidth={1.5} />
+    - ECG: <Heart size={64} strokeWidth={1.5} />
+    
+    Navigation Icons:
+    - Home: <Home size={20} />
+    - Services: <Activity size={20} />
+    - About: <Building2 size={20} />
+    - Contact: <Phone size={20} />
+    - Calendar: <Calendar size={20} />
+
+12. **MOBILE** - Often where AI sites fail
+    - Font size: 18px body text on mobile (not 16px)
+    - Touch targets: 48px minimum
+    - Full-width images with proper aspect ratio
+    - Single column forms
+    - Hamburger menu slides in from right
+
+13. **SPECIFIC PAGE IMPROVEMENTS**
+
+    HOMEPAGE:
+    - "NOW ACCEPTING WALK-INS" badge above heading
+    - Hero: Dr. Augustine with real role (Medical Director)
+    - Stats: Add year to all (e.g., "50+ Services", "6 Expert Physicians", "98% Accuracy Rate")
+    - Add real patient testimonials with names/dates
+
+    ABOUT PAGE:
+    - Story section: 2-column with image on right
+    - Stats in boxes: 48px number + 14px label
+    - Team: Real photos of 2-3 actual doctors/staff
+    - Mission/Vision: left border accent (4px blue)
+
+    SERVICES PAGE:
+    - Each service card: image on top, content below
+    - Lucide React icons (64px, stroke-width 1.5), NOT emoji
+    - Icons: Microscope, Waves, Zap, Heart, Activity, Building2, Users
+    - Icon background: circular #EFF6FF with icon in #003D7A blue
+    - "Learn More →" links in blue
+    - Call-to-action at bottom
+
+    CONTACT PAGE:
+    - Form: left side (500px max width), info: right side on desktop
+    - Map: full width, rounded corners, embedded properly
+    - Phone/address in info cards with circular blue icons
+    - Success message as toast notification
+
+14. **FINAL QUALITY CHECKS**
+    - All text readable (contrast ≥4.5:1)
+    - All buttons 44px+ height
+    - Images compressed and optimized
+    - No generic placeholder text
+    - Real medical terminology (not simplified)
+    - All CTAs point to real actions
+    - Mobile responsive tested on 3+ devices
+
+## KEY PRINCIPLE
+The difference between AI-generated and professional is: SPECIFICITY + RESTRAINT + POLISH
+
+- Specificity: Real numbers, real photos, real copy
+- Restraint: White space, selective colors, simple interactions  
+- Polish: Proper spacing, smooth animations, professional typography
+
+Don't try to make it "wow" - make it "trustworthy". A medical site should feel professional and clean, not exciting and AI-designed.
+
+START WITH SPACING & TYPOGRAPHY - those two alone will remove the AI feel by 60%.
